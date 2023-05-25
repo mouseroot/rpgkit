@@ -1,4 +1,6 @@
-
+class world:
+    def __init__(self):
+        pass
 
 class character:
     def __init__(self, name, health):
