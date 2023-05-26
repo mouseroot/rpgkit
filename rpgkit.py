@@ -17,3 +17,7 @@ class item:
     def use_item(self, target):
         self.count -= 1
         
+class npc(character):
+    def __init__(self, name):
+        character.__init__(self, name)
+        self.dialog = []
