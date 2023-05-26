@@ -36,3 +36,8 @@ class weapon(item):
         super().use_item(target)
 
     
+class armor(item):
+    def __init__(self, name, value=1, count=1,defense=1):
+        super().__init__(name, value, count)
+        self.defense = defense
+        self.using = False
