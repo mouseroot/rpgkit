@@ -1,6 +1,7 @@
 class world:
-    def __init__(self):
-        pass
+    def __init__(self, name="Default World"):
+        self.entities = []
+        self.name = name
 
 class character:
     def __init__(self, name, health=100):
