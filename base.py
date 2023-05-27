@@ -76,3 +76,30 @@ class skill:
         self.level = 1
         self.exp = 0
         self.next_exp = 1
+
+
+class warrior(character):
+    def __init__(self, name, health=100):
+        super().__init__(name, health)
+
+
+class mage(character):
+    def __init__(self, name, health=100):
+        super().__init__(name, health)
+        self.mana = 100
+
+
+class wizard(character):
+    def __init__(self, name, health=100):
+        super().__init__(name, health)
+        self.mana = 100
+
+class archer(character):
+    def __init__(self, name, health=100):
+        super().__init__(name, health)
+        self.accuracy = 2
+
+class thief(character):
+    def __init__(self, name, health=100):
+        super().__init__(name, health)
+        self.stealth = 2
