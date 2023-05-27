@@ -1,6 +1,7 @@
 FLAG_DELETE = 1
 FLAG_DEAD = 2
 
+
 class world:
     def __init__(self, name="Default World"):
         self.entities = []
