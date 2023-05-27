@@ -1,3 +1,4 @@
+import random
 FLAG_DELETE = 1
 FLAG_DEAD = 2
 
@@ -27,6 +28,15 @@ class character:
         self.health -= amt
         if self.health <= 0:
             self.flags.append(FLAG_DEAD)
+
+    def deal_damage(self, target, damage,r_value=0):
+        if r_value != 0:
+            r_value = random.randint(1,r_value)
+            print(f"Debug:\tr_value: {r_value}")
+        target.health -= self.base_attack + damage + r_value
+        if target.health <= 0:
+            print(f"Debug:\t{target.name} dead flag added")
+            target.flags.append(FLAG_DEAD)
 
     def give_item(self, item_index, target):
         itm = self.items[item_index]
@@ -112,3 +122,4 @@ class thief(character):
     def __init__(self, name, health=100):
         super().__init__(name, health)
         self.stealth = 2
+

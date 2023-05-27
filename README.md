@@ -23,6 +23,18 @@ a basic library for creating text based rpgs
 
 - skill class has level, exp and exp for next level
 
+## Character Classes
+
+- Warrior class
+
+- Mage class
+
+- Wizard class
+
+- Archer class
+
+- Thief class
+
 # Generate (generate.py)
 
 - generate class
