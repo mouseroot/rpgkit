@@ -31,7 +31,6 @@ class item:
         if self.max_count >= self.count:
             self.flags.append(FLAG_DELETE)
 
-        
 class npc(character):
     def __init__(self, name):
         character.__init__(self, name)
@@ -52,3 +51,11 @@ class armor(item):
         super().__init__(name, value, count)
         self.defense = defense
         self.using = False
+
+class spell:
+    def __init__(self, name, cost=1):
+        self.name = name
+        self.base_cost = cost
+
+    def use_spell(self, target):
+        pass

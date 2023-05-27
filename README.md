@@ -5,7 +5,7 @@ a basic library for creating text based rpgs
 ## features
 
 - easy to import
-- world, character, item, npc, weapon, armor base classes
+- world, character, item, npc, weapon, armor and spell base classes
 
 
 ## Road map
