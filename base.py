@@ -7,6 +7,12 @@ class world:
         self.entities = []
         self.name = name
 
+    def add_entity(self, ent):
+        self.entities.append(ent)
+
+    def add_entity_array(self, arr):
+        self.entities += arr
+
 class character:
     def __init__(self, name, health=100):
         self.name = name
