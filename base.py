@@ -18,6 +18,8 @@ class character:
     def __init__(self, name, health=100):
         self.name = name
         self.health = health
+        self.exp = 0
+        self.next_exp = 1
         self.skills = []
         self.base_attack = 1
         self.base_defense = 1
@@ -95,6 +97,7 @@ class skill:
         self.level = 1
         self.exp = 0
         self.next_exp = 1
+
 
 
 class warrior(character):
