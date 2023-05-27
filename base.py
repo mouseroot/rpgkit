@@ -18,6 +18,8 @@ class character:
         self.name = name
         self.health = health
         self.skills = []
+        self.base_attack = 1
+        self.base_defense = 1
         self.items = []
         self.flags = []
 

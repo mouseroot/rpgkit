@@ -9,7 +9,7 @@ a basic library for creating text based rpgs
 
 - World class is a container class that holds all the items, characters and various npcs
 
-- Character class has health, skills and inventory
+- Character class has health, skills and inventory, base attack/defense
 
 - Item class has a base value and maximum number of uses
 
