@@ -5,7 +5,7 @@ a basic library for creating text based rpgs
 - easy to import
 - world, character, item, npc, weapon, armor, spell and skill base classes
 
-# Classes
+# Classes (base.py)
 
 - World class is a container class that holds all the items, characters and various npcs
 
@@ -22,6 +22,12 @@ a basic library for creating text based rpgs
 - spell class has a base_cost
 
 - skill class has level, exp and exp for next level
+
+# Generate (generate.py)
+
+- generate class
+
+- male names list
 
 ## Road map
 - plugin to ai for randomized characters and story
