@@ -16,8 +16,9 @@ class generate:
     def create_world(self, ent_count):
         self.gen_world = world(self.name)
         for _ in range(int(ent_count)):
-            n = character(random.choice(NAME_LIST_MALE),health=random.randint(90,100))
-            self.gen_world.add_entity(n)
+            char = character(random.choice(NAME_LIST_MALE),health=random.randint(90,100))
+            n = npc(random.choice(NAME_LIST_MALE))
+            self.gen_world.add_entity(random.choice[char,n])
 
 
 gen = generate("Main")
