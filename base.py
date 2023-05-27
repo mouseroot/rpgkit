@@ -28,6 +28,15 @@ class character:
         if self.health <= 0:
             self.flags.append(FLAG_DEAD)
 
+    def give_item(self, item_index, target):
+        itm = self.items[item_index]
+        target.items.append(itm)
+        self.items.remove(itm)
+
+    def add_item(self, n_item):
+        n_inst = item(n_item.name, n_item.value, n_item.max_count)
+        self.items.append(n_inst)
+
 class item:
     def __init__(self, name, value=1,max=1):
         self.name = name
