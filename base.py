@@ -14,6 +14,19 @@ class world:
     def add_entity_array(self, arr):
         self.entities += arr
 
+    def load_database(self, filename):
+        with open(filename,"r") as db:
+            lines = db.readlines()
+            for line in lines:
+                _type, name, val = line.split(",")
+                val = int(val)
+                if _type == "item":
+                    self.entities.append(item(name,val))
+                elif _type == "weapon":
+                    self.entities.append(weapon(name,base_damage=val))
+                elif _type == "armor":
+                    self.entities.append(armor(name,defense=val))
+
 class character:
     def __init__(self, name, health=100):
         self.name = name
@@ -49,6 +62,9 @@ class character:
         n_inst = item(n_item.name, n_item.value, n_item.max_count)
         self.items.append(n_inst)
 
+    def __str__(self) -> str:
+        return f"Character({self.name} {self.health} health)"
+
 class item:
     def __init__(self, name, value=1,max=1):
         self.name = name
@@ -61,6 +77,9 @@ class item:
         self.count += 1
         if self.max_count >= self.count:
             self.flags.append(FLAG_DELETE)
+
+    def __repr__(self) -> str:
+        return f"Item({self.name} ${self.value})"
 
 class npc(character):
     def __init__(self, name):
@@ -76,12 +95,18 @@ class weapon(item):
         target.take_damage(self.base_damage)
         super().use_item(target)
 
+    def __repr__(self) -> str:
+        return f"Weapon({self.name} {self.base_damage} Damage)"
+
     
 class armor(item):
     def __init__(self, name, value=1, count=1,defense=1):
         super().__init__(name, value, count)
         self.base_defense = defense
         self.using = False
+
+    def __repr__(self) -> str:
+        return f"Armor({self.name} {self.base_defense} Defense)"
 
 class spell:
     def __init__(self, name, cost=1):
@@ -126,3 +151,6 @@ class thief(character):
         super().__init__(name, health)
         self.stealth = 2
 
+#main = world("Main")
+#main.load_database("rpgkit\\test_database.txt")
+#print(main.entities)
