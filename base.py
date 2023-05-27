@@ -11,6 +11,7 @@ class character:
     def __init__(self, name, health=100):
         self.name = name
         self.health = health
+        self.skills = []
         self.flags = []
 
     def take_damage(self, amt):
@@ -59,3 +60,10 @@ class spell:
 
     def use_spell(self, target):
         pass
+
+class skill:
+    def __init__(self, name):
+        self.name = name
+        self.level = 1
+        self.exp = 0
+        self.next_exp = 1
