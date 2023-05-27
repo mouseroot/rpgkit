@@ -1,3 +1,6 @@
+FLAG_DELETE = 1
+FLAG_DEAD = 2
+
 class world:
     def __init__(self, name="Default World"):
         self.entities = []
@@ -11,6 +14,8 @@ class character:
 
     def take_damage(self, amt):
         self.health -= amt
+        if self.health <= 0:
+            self.flags.append(FLAG_DEAD)
 
 class item:
     def __init__(self, name, value=1,count=1):
