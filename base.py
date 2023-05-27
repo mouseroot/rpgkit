@@ -19,14 +19,18 @@ class character:
             self.flags.append(FLAG_DEAD)
 
 class item:
-    def __init__(self, name, value=1,count=1):
+    def __init__(self, name, value=1,max=1):
         self.name = name
         self.value = value
-        self.count = count
+        self.count = 0
+        self.max_count = max
         self.flags = []
 
     def use_item(self, target):
-        self.count -= 1
+        self.count += 1
+        if self.max_count >= self.count:
+            self.flags.append(FLAG_DELETE)
+
         
 class npc(character):
     def __init__(self, name):
