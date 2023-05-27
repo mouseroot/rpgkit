@@ -12,6 +12,7 @@ class character:
         self.name = name
         self.health = health
         self.skills = []
+        self.items = []
         self.flags = []
 
     def take_damage(self, amt):
@@ -50,7 +51,7 @@ class weapon(item):
 class armor(item):
     def __init__(self, name, value=1, count=1,defense=1):
         super().__init__(name, value, count)
-        self.defense = defense
+        self.base_defense = defense
         self.using = False
 
 class spell:

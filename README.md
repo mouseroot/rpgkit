@@ -1,5 +1,3 @@
-# rpgkit
-
 a basic library for creating text based rpgs
 
 ## features
@@ -7,6 +5,23 @@ a basic library for creating text based rpgs
 - easy to import
 - world, character, item, npc, weapon, armor, spell and skill base classes
 
+# Classes
+
+- World class is a container class that holds all the items, characters and various npcs
+
+- Character class has health, skills and inventory
+
+- Item class has a base value and maximum number of uses
+
+- npc class extends characer class, adds dialog
+
+- weapon class extends item class, adds base_damage
+
+- armor class extends item class, adds base_defense
+
+- spell class has a base_cost
+
+- skill class has level, exp and exp for next level
 
 ## Road map
 - plugin to ai for randomized characters and story
