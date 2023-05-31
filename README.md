@@ -44,8 +44,10 @@ a basic library for creating text based rpgs
 ## Character Classes
 
 - Warrior class
+    - Berzerker
 
 - Mage class
+    
 
 - Wizard class
 
