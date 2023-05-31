@@ -42,14 +42,23 @@ a basic library for creating text based rpgs
 ## Character Classes
 
 - Warrior class - the warrior class is a bruteforce class that specializes in raw attack power over speed or accuracy.
+
     - Berzerker - the berzerker class specializes in extremly high damage at the cost of speed, accuracy and sometimes even your own health.
 
 - Mage class - class of magic wielders that rely on arcane energy and power from other realms to craft raw attacks and spells
 
+    - Druid - nature focused mages, drawing power from nature, strong buffs when in nature, and passive de-buffs when away from nature.
+
+    - Elemental - mages that focus on the elements themselves, overtime an element will infuse into the mage and the mage becomes the emboidiment of that element.
 
 - Wizard class - a more robust class of magic wielder that relies on existing spells to accomplish thier goals
 
+    - Cleric - a class of wizard that uses healing spells and magick to both inflict damage and heal those who need it.
+
+    - Shade - a class of undead wizard, fuelded by the power of the underworld.
+
 - Archer class - long range attacks, utilizing stealth and extreme accuracy, they are not strong, but they are deadly accurate from far away.
+    - Hunter - a class of archer that has exceptional tracking skills
 
 - Thief class - a class that specializes in being a jack of all trades, fast, accurate and capable of escaping the stickiest of situations
 
