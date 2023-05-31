@@ -19,17 +19,27 @@ a basic library for creating text based rpgs
     - give/add items
     - deal/take damage
 
-- Item class has a base value and maximum number of uses
+- Base Item class 
+    - base value
+    - maximum number of uses
+    - use item
 
-- npc class extends characer class, adds dialog
+- Base NPC class extends characer class
+    - adds dialog
 
-- weapon class extends item class, adds base_damage
+- Weapon class extends item class
+    - adds base damage
 
-- armor class extends item class, adds base_defense
+- armor class extends item class
+    - adds base defense
 
-- spell class has a base_cost
+- spell class
+    - base cost
 
-- skill class has level, exp and exp for next level
+- skill class
+    - level, 
+    - experience
+    - experience for next level
 
 ## Character Classes
 
