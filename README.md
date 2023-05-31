@@ -9,8 +9,6 @@ a basic library for creating text based rpgs
 
 - World class is a container class that holds all the items, characters and various npcs
     - ability to load csv of items and characters
-    -
-
 
 - Base Character class 
     - health, skills and inventory, 
@@ -43,17 +41,17 @@ a basic library for creating text based rpgs
 
 ## Character Classes
 
-- Warrior class
-    - Berzerker
+- Warrior class - the warrior class is a bruteforce class that specializes in raw attack power over speed or accuracy.
+    - Berzerker - the berzerker class specializes in extremly high damage at the cost of speed, accuracy and sometimes even your own health.
 
-- Mage class
-    
+- Mage class - class of magic wielders that rely on arcane energy and power from other realms to craft raw attacks and spells
 
-- Wizard class
 
-- Archer class
+- Wizard class - a more robust class of magic wielder that relies on existing spells to accomplish thier goals
 
-- Thief class
+- Archer class - long range attacks, utilizing stealth and extreme accuracy, they are not strong, but they are deadly accurate from far away.
+
+- Thief class - a class that specializes in being a jack of all trades, fast, accurate and capable of escaping the stickiest of situations
 
 # Generate (generate.py)
 
