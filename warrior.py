@@ -1,5 +1,5 @@
 from base import warrior
-
+from base import item,weapon
 #Warrior class
 
 class berzerker(warrior):
@@ -7,4 +7,5 @@ class berzerker(warrior):
         super().__init__(name, health)
         self.berzerk = 0
 
+battle_axe = weapon("Battle Axe",base_damage=2)
 
