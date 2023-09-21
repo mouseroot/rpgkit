@@ -42,7 +42,7 @@ class Inventory:
     
 
 class Entity:
-    def __init__(self, name, level=1,hp=50, atk=1,_def=1):
+    def __init__(self, name, level=1,hp=50, _atk=1, _def=1):
         self.id = 0
 
         self.hp = hp
@@ -54,8 +54,8 @@ class Entity:
         self.gold = 1
 
         self.stat_points = 0
-        self._atk = atk
-        self._def = _def
+        self.stat_attack = _atk
+        self.stat_defense = _def
 
         self.inventory = Inventory()
         self.blueprints = []
@@ -93,7 +93,7 @@ class Entity:
         self.armor = arm
 
     def take_damage(self, dmg):
-        dmg -= self._def
+        dmg -= self.stat_defense
         if dmg <= 0:
             dmg = 0
         self.hp -= dmg
@@ -135,7 +135,7 @@ class Entity:
     
     def attack(self, target):
         weapon_damage = self.weapon.damage if self.weapon is not None else 0
-        min_attack = int((self._atk + weapon_damage) * (self.level))
+        min_attack = int((self.stat_attack + weapon_damage) * (self.level))
         max_attack = int(min_attack * 1.6)  
         calculated_attack = int(random.randint(min_attack, max_attack))
         target.take_damage(calculated_attack)
@@ -157,10 +157,10 @@ class Entity:
                 self.maxhp += value
                 self.stat_points -= value
             elif item.lower() == "attack":
-                self._atk += value
+                self.stat_attack += value
                 self.stat_points -= value
             elif item.lower() == "defense":
-                self._def += value
+                self.stat_defense += value
                 self.stat_points -= value
             return True
         else:
@@ -168,11 +168,11 @@ class Entity:
 
 
 class Character(Entity):
-    def __init__(self,name,level,hp=50,ak=1,df=1):
-        super().__init__(name,level,hp,ak,df)
+    def __init__(self,name,level,hp=50,_atk=1,_def=1):
+        super().__init__(name,level,hp,_atk,_def)
 
 
 
 class Enemy(Character):
-    def __init__(self,name,level,hp,_atk=1,ddef=1):
-        super().__init__(name,level,hp,_atk,ddef)
+    def __init__(self,name,level,hp,_atk=1,_def=1):
+        super().__init__(name,level,hp,_atk,_def)
