@@ -1,8 +1,6 @@
-import random
-
 class Item:
     def __init__(self, name, val):
-        self.uuid = random.randint(1,97779)
+        self.id = 0
         self.name = name
         self.value = val
         self.uses = 1
@@ -13,8 +11,6 @@ class Item:
         if self.uses == 1:
             self._destroy = True
 
-    def copy(self):
-        return Item(self.name, self.value)
 
 class HealingItem(Item):
     def __init__(self, name, val,healthVal):
@@ -34,7 +30,7 @@ class Weapon(Item):
         self.damage = dmg
 
     def use(self, target):
-        target.hp -= self.damage + random.randint(1,6)
+        target.hp -= self.damage
 
 class RangedWeapon(Weapon):
     def __init__(self, name, val, dmg, range):
