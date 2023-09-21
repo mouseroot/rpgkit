@@ -3,6 +3,14 @@ from .item import HealingItem, Weapon, RangedWeapon, Armor, Item
 from .crafting import Blueprint
 from .entity import Enemy
 
+class Skill:
+    def __init__(self, name) -> None:
+        self.name = name
+
+class Spell:
+    def __init__(self, name, cost) -> None:
+        self.name = name
+        self.cost = cost
 
 class ResourceManager:
     def __init__(self, fname, key):
