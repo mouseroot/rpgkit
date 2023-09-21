@@ -1,11 +1,11 @@
 import random
-from . import crafting
-from . import item
 from . import skills
 
+
+
 class InventorySlot:
-    def __init__(self, item, count):
-        self.item = item
+    def __init__(self, id, count):
+        self.item = id
         self.count = count
 
 class Inventory:
@@ -13,36 +13,22 @@ class Inventory:
         self.items = []
         self.count = 0
 
-    def has_item(self, item):
+    def add_item(self, item_id, count=1):
         for slot in self.items:
-            if slot.item.name.lower() == item:
-                return slot
-        return False
+            if slot.item == item_id:
+                #print(f"Item exists, adding to existing slot")
+                slot.count += count
+                return
+        #print("Creating a new slot")
+        slot = InventorySlot(item_id,count)
+        self.items.append(slot)
+        
 
-    def add_item(self, item):
-        check_item = self.has_item(item.name.lower())
-        if check_item:
-            #print(f"Adding to existing slot")
-            check_item.count += 1
-        else:
-            #print(f"Creating new slot for {item.name}")
-            slot = InventorySlot(item, 1)
-            self.items.append(slot)
-
-    def get_item_count(self, item):
-        for slot in self.items:
-            if slot.item.name.lower() == item:
-                return slot.count
-            
-    def update(self):
-        for slot in self.items:
-            if slot.count <= 0:
-                #print(f"Removing {slot.item.name}")
-                self.items.remove(slot)
+    
 
 class Entity:
     def __init__(self, name, level=1,hp=50, atk=1,_def=1):
-        self.uuid = random.randint(1,98889)
+        self.id = 0
 
         self.hp = hp
         self.maxhp = self.hp
@@ -57,6 +43,7 @@ class Entity:
         self._def = _def
 
         self.inventory = Inventory()
+        self.blueprints = []
         self.weapon = None
         self.armor = None
 
@@ -71,7 +58,7 @@ class Entity:
 
     def show_inventory(self):
         for slot in self.inventory.items:
-            print(f"({slot.item.uuid}) {slot.item.name} x{slot.count}")
+            yield slot
 
     def add_gold(self, amt):
         self.gold += amt
@@ -88,17 +75,14 @@ class Entity:
         else:
             return False
     
-    def set_weapon(self, wep: item.Weapon):
+    def set_weapon(self, wep):
         self.weapon = wep
 
-    def set_armor(self, arm: item.Armor):
+    def set_armor(self, arm):
         self.armor = arm
 
     def take_damage(self, dmg):
         dmg -= self._def
-        if self._defending:
-            #print(f"{self.name} is defending")
-            dmg = abs(dmg / 2)
         if dmg <= 0:
             dmg = 0
         #print(f"{self.name} takes {dmg} damage")
@@ -106,9 +90,10 @@ class Entity:
         if self.hp <= 0:
             #print(f"{self.name} has died")
             self._dead = True
+            self.hp = 0
 
-    def add_item(self, item: item.Item):
-        self.inventory.add_item(item)
+    def add_item(self, item, count=1):
+        self.inventory.add_item(item, count)
 
     def add_spell(self, spell):
         self.spells.append(spell)
@@ -133,8 +118,9 @@ class Entity:
         self.exp += exp
         if self.exp >= self.next_level():
             self.level += 1
+            return True
 
-    def next_level(self, base_exp=40, exp_growth=1.8):
+    def next_level(self, base_exp=10, exp_growth=1.8):
         exp_needed = base_exp * (exp_growth ** (self.level - 1))
         return int(exp_needed)
     
@@ -149,6 +135,7 @@ class Entity:
         calculated_attack = int(random.randint(min_attack, max_attack))
        #calculated_attack = int(calculated_attack)
         target.take_damage(calculated_attack)
+        #print(f"Calculated Attack: {calculated_attack}")
         return calculated_attack
     
     def reset(self):
