@@ -23,7 +23,6 @@ class Inventory:
         if slot:
             slot.count -= count
             if slot.count <= 0:
-                print(f"Removing slot")
                 self.items.remove(slot)
 
     def has_item(self, item_id):
@@ -72,10 +71,6 @@ class Entity:
         self._dead = False
         self._defending = False
 
-    def show_inventory(self):
-        for slot in self.inventory.items:
-            yield slot
-
     def add_gold(self, amt):
         self.gold += amt
 
@@ -101,10 +96,8 @@ class Entity:
         dmg -= self._def
         if dmg <= 0:
             dmg = 0
-        #print(f"{self.name} takes {dmg} damage")
         self.hp -= dmg
         if self.hp <= 0:
-            #print(f"{self.name} has died")
             self._dead = True
             self.hp = 0
 
@@ -118,15 +111,15 @@ class Entity:
         self.skills.append(skill)
 
     def has_skill(self, skname):
-        skill = skills.lookup_skill(skname)
-        if skill:
-            return skill
+        for skill in self.skills:
+            if skill.name.lower() == skname:
+                return skill
         return False
     
     def has_spell(self, spname):
-        spell = skills.lookup_spell(spname)
-        if spell:
-            return spell
+        for spell in self.spells:
+            if spell.name.lower() == spname:
+                return spell
         return False
     
 
@@ -142,16 +135,10 @@ class Entity:
     
     def attack(self, target):
         weapon_damage = self.weapon.damage if self.weapon is not None else 0
-        #print(f"Weapon: {self.weapon.name if self.weapon is not None else 'No Weapon'}")
-        #print(f"Weapon Damage: {weapon_damage}")
-
         min_attack = int((self._atk + weapon_damage) * (self.level))
-        max_attack = int(min_attack * 1.6)  # Adjust this factor as needed for your game balance
-        #print(f"Damage Ranges: ({min_attack}/{max_attack})")
+        max_attack = int(min_attack * 1.6)  
         calculated_attack = int(random.randint(min_attack, max_attack))
-       #calculated_attack = int(calculated_attack)
         target.take_damage(calculated_attack)
-        #print(f"Calculated Attack: {calculated_attack}")
         return calculated_attack
     
     def reset(self):
