@@ -5,13 +5,6 @@ class InventorySlot:
         self.item = id
         self.count = count
 
-import random
-
-class InventorySlot:
-    def __init__(self, id, count):
-        self.item = id
-        self.count = count
-
 class Inventory:
     def __init__(self):
         self.items = []
