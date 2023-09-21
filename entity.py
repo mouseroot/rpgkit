@@ -1,7 +1,4 @@
 import random
-from . import skills
-
-
 
 class InventorySlot:
     def __init__(self, id, count):
