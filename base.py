@@ -1,5 +1,5 @@
 import json
-from .item import HealingItem, Weapon, Armor, Item, ResourceManager
+from .item import HealingItem, Weapon, RangedWeapon, Armor, Item
 from .crafting import Blueprint
 from .entity import Enemy
 
@@ -55,17 +55,25 @@ class ItemManager(ResourceManager):
 
     def spawn(self, data):
         if data["type"] == "item":
-            i = Item(data["name"], data["value"])
-            i.id = data["id"]
-            return i
+            item = Item(data["name"], data["value"])
+            item.id = data["id"]
+            return item
+        
         elif data["type"] == "healing":
-            hl = HealingItem(data["name"], data["value"], data["healing"])
-            hl.id = data["id"]
-            return hl
+            heal_item = HealingItem(data["name"], data["value"], data["healing"])
+            heal_item.id = data["id"]
+            return heal_item
+        
         elif data["type"] == "weapon":
             wep = Weapon(data["name"], data["value"], data["damage"])
             wep.id = data["id"]
             return wep
+        
+        elif data["type"] == "ranged weapon":
+            r_wep = RangedWeapon(data["name"], data["value"], data["damage"], data["range"])
+            r_wep.id = data["id"]
+            return r_wep
+        
         elif data["type"] == "armor":
             arm = Armor(data["data"], data["value"], data["defense"])
             arm.id = data["id"]
