@@ -86,21 +86,3 @@ class ItemManager(ResourceManager):
             arm = Armor(data["data"], data["value"], data["defense"])
             arm.id = data["id"]
             return arm
-
-
-class World:
-    def __init__(self,name):
-        self.name = name
-        self.ents = []
-
-    def spawnEntity(self, _type, args):
-        ent = _type(*args)
-        self.ents.append(ent)
-        return ent
-
-    def spawnItem(self,_type, args):
-        item = _type(*args)
-        self.ents.append(item)
-        return item
-    
-world = World("Main")
