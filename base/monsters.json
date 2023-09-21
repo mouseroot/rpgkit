@@ -1,0 +1,85 @@
+{
+    "monsters": [
+        {
+            "id": 1000,
+            "name": "ant",
+            "level": 1,
+            "health": 10,
+            "attack": 1,
+            "defense": 1,
+            "exp": 1
+        },
+        {
+            "id": 1002,
+            "name": "rat",
+            "level": 1,
+            "health": 18,
+            "attack": 2,
+            "defense": 1,
+            "exp": 3
+        },
+        {
+            "id": 1003,
+            "name": "roach",
+            "level": 1,
+            "health": 5,
+            "attack": 1,
+            "defense": 1,
+            "exp": 2
+        },
+        {
+            "id": 1004,
+            "name": "mole",
+            "level": 1,
+            "health": 14,
+            "attack": 2,
+            "defense": 1,
+            "exp": 6
+        },
+        {
+            "id": 1005,
+            "name": "orc",
+            "level": 2,
+            "health": 25,
+            "attack": 3,
+            "defense": 2,
+            "exp": 11
+        },
+        {
+            "id": 1006,
+            "name": "bear",
+            "level": 2,
+            "health": 31,
+            "attack": 4,
+            "defense": 3,
+            "exp": 15
+        },
+        {
+            "id": 1007,
+            "name": "troll",
+            "level": 3,
+            "health": 44,
+            "attack": 5,
+            "defense": 4,
+            "exp": 21
+        },
+        {
+            "id": 1008,
+            "name": "skeleton",
+            "level": 2,
+            "health": 21,
+            "attack": 3,
+            "defense": 3,
+            "exp": 18
+        },
+        {
+            "id": 1009,
+            "name": "zombie",
+            "level": 2,
+            "health": 21,
+            "attack": 2,
+            "defense": 3,
+            "exp": 16
+        }
+    ]
+}

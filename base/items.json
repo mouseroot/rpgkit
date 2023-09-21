@@ -1,0 +1,132 @@
+{
+    "items": [
+        {
+            "id": 105,
+            "type": "item",
+            "name": "glass shard",
+            "value": 1,
+            "uses": 0
+        },
+        {
+            "id": 106,
+            "type": "item",
+            "name": "ruler",
+            "value": 1,
+            "uses": 0
+        },
+        {
+            "id": 107,
+            "type": "item",
+            "name": "protractor",
+            "value": 1,
+            "uses": 0
+        },
+        {
+            "id": 108,
+            "type": "item",
+            "name": "bottle",
+            "value": 7,
+            "uses": 1
+        },
+        {
+            "id": 109,
+            "type": "healing",
+            "name": "potion",
+            "value": 3,
+            "healing": 5
+        },
+        {
+            "id": 110,
+            "type": "healing",
+            "name": "large potion",
+            "value": 7,
+            "healing": 15
+        },
+        {
+            "id": 111,
+            "type": "healing",
+            "name": "xlarge potion",
+            "value": 15,
+            "healing": 50
+        },
+        {
+            "id": 112,
+            "type": "weapon",
+            "name": "stick",
+            "value": 1,
+            "damage": 1
+        },
+        {
+            "id": 113,
+            "type": "weapon",
+            "name": "rod",
+            "value": 3,
+            "damage": 3
+        },
+        {
+            "id": 114,
+            "type": "weapon",
+            "name": "wooden sword",
+            "value": 5,
+            "damage": 8
+        },
+        {
+            "id": 115,
+            "type": "weapon",
+            "name": "sword",
+            "value": 14,
+            "damage": 17
+        },
+        {
+            "id": 116,
+            "type": "ranged weapon",
+            "name": "pistol",
+            "value": 15,
+            "damage": 14,
+            "range": 100
+        },
+        {
+            "id": 117,
+            "type": "ranged weapon",
+            "name": "rifle",
+            "value": 20,
+            "damage": 21,
+            "range": 350
+        },
+        {
+            "id": 118,
+            "type": "armor",
+            "name": "shirt",
+            "value": 1,
+            "defense": 2
+        },
+        {
+            "id": 119,
+            "type": "armor",
+            "name": "vest",
+            "value": 5,
+            "defense": 5
+        },
+        {
+            "id": 120,
+            "type": "armor",
+            "name": "thin armor",
+            "value": 7,
+            "defense": 11
+        },
+        {
+            "id": 121,
+            "type": "armor",
+            "name": "thick armor",
+            "value": 11,
+            "defense": 17
+        },
+        {
+            "id": 122,
+            "type": "armor",
+            "name": "heavy armor",
+            "value": 22,
+            "defense": 24
+        }
+    ]
+}

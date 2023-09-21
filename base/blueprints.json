@@ -1,0 +1,13 @@
+{
+    "blueprints": [
+        {
+            "id": 1,
+            "name": "large potion",
+            "requirements": {
+                "glass shard": 1,
+                "potion": 2
+            },
+            "result": "large potion"
+        }
+    ]
+}
