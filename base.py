@@ -53,7 +53,7 @@ class BlueprintManager(ResourceManager):
         super().__init__(fname, "blueprints")
 
     def spawn(self, item_data):
-        bp = Blueprint(item_data["requirements"], item_data["result"])
+        bp = Blueprint(item_data["name"], item_data["requirements"], item_data["result"])
         bp.id = item_data["id"]
         return bp
 
