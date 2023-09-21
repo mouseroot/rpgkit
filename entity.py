@@ -5,6 +5,13 @@ class InventorySlot:
         self.item = id
         self.count = count
 
+import random
+
+class InventorySlot:
+    def __init__(self, id, count):
+        self.item = id
+        self.count = count
+
 class Inventory:
     def __init__(self):
         self.items = []
@@ -13,12 +20,31 @@ class Inventory:
     def add_item(self, item_id, count=1):
         for slot in self.items:
             if slot.item == item_id:
-                #print(f"Item exists, adding to existing slot")
                 slot.count += count
                 return
-        #print("Creating a new slot")
         slot = InventorySlot(item_id,count)
         self.items.append(slot)
+
+    def remove_item(self, item_id, count=1):
+        slot = self.has_item(item_id)
+        if slot:
+            slot.count -= count
+            if slot.count <= 0:
+                print(f"Removing slot")
+                self.items.remove(slot)
+
+    def has_item(self, item_id):
+        for slot in self.items:
+            if slot.item == int(item_id):
+                return slot
+        return False
+    
+    def get_count(self, item_id):
+        slot = self.has_item(item_id)
+        if slot:
+            return slot.count
+        return 0
+
         
 
     
