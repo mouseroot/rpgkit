@@ -26,7 +26,7 @@ class ResourceManager:
 
     def by_id(self, id):
         for item in self.database:
-            if item["id"] == id:
+            if item["id"] == int(id):
                 return item
             
     def spawn(self, data):
