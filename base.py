@@ -29,6 +29,11 @@ class ResourceManager:
             if item["id"] == int(id):
                 return item
             
+    def by_property(self, prop, value):
+        for item in self.database:
+            if item[prop] == value:
+                return item
+            
     def spawn(self, data):
         pass
 
