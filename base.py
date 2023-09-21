@@ -5,8 +5,11 @@ from .entity import Enemy
 
 
 class ResourceManager:
-    def __init__(self, item_database, key):
-        self.database = json.load(open(item_database))[key]
+    def __init__(self, fname, key):
+        try:
+            self.database = json.load(open(fname))[key]
+        except FileNotFoundError:
+            print(f"{fname} was not found")
 
     def by_name(self, name):
         for item in self.database:
