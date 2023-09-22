@@ -86,11 +86,13 @@ class Entity:
         else:
             return False
     
-    def set_weapon(self, slot):
-        self.weapon = slot.item
+    def set_weapon(self, slot, itemsManager):
+        self.weapon = itemsManager.spawn_from_id(slot.item)
+        #self.stat_attack += self.weapon.damage
 
-    def set_armor(self, slot):
-        self.armor = slot.item
+    def set_armor(self, slot, itemsManager):
+        self.armor = itemsManager.spawn_from_id(slot.item)
+        #self.stat_defense += self.armor.defense
 
     def take_damage(self, dmg):
         dmg -= self.stat_defense

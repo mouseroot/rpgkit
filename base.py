@@ -38,7 +38,7 @@ class ResourceManager:
         pass
 
     def spawn_from_id(self, id):
-        return self.spawn(self.by_id(id)["id"])
+        return self.spawn(self.by_id(id))
 
     def spawn_from_name(self, name):
         return self.spawn(self.by_name(name))
@@ -88,6 +88,6 @@ class ItemManager(ResourceManager):
             return r_wep
         
         elif data["type"] == "armor":
-            arm = Armor(data["data"], data["value"], data["defense"])
+            arm = Armor(data["name"], data["value"], data["defense"])
             arm.id = data["id"]
             return arm
